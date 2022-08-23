@@ -14,7 +14,7 @@ def test_appropriate_match_points_are_assigned_for_each_game():
     sample_match_result = "Lions 3, Snakes 3"
     points_assignment = determine_match_points(sample_match_result)
 
-    assert_that(points_assignment).is_equal_to({"Lions": 1, "Snakes": 3})
+    assert_that(points_assignment).is_equal_to({"Lions": 1, "Snakes": 1})
 
 
 def test_league_table_is_generated_from_match_results():
@@ -28,9 +28,9 @@ def test_league_table_is_generated_from_match_results():
 
     league_table = generate_league_table(sample_match_results)
     expected_outcome = {
-        "Lions": 4,
-        "Snakes": 3,
-        "Tarantulas": 4,
+        "Lions": 5,
+        "Snakes": 1,
+        "Tarantulas": 6,
         "FC Awesome": 1,
         "Grouches": 0,
     }
@@ -40,20 +40,20 @@ def test_league_table_is_generated_from_match_results():
 
 def test_leader_board_is_generated_from_league_table():
     sample_generated_league_table = {
-        "Lions": 4,
-        "Snakes": 3,
-        "Tarantulas": 4,
+        "Lions": 5,
+        "Snakes": 1,
+        "Tarantulas": 6,
         "FC Awesome": 1,
         "Grouches": 0,
     }
 
     leader_board = rank_league_table(sample_generated_league_table)
     expected_outcome = {
-        "Lions": 4,
-        "Tarantulas": 4,
+        "Tarantulas": 6,
+        "Lions": 5,
         "FC Awesome": 1,
+        "Snakes": 1,
         "Grouches": 0,
-        "Snakes": 0,
     }
 
     assert_that(leader_board).is_equal_to(expected_outcome)
