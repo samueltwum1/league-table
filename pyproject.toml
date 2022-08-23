@@ -19,6 +19,9 @@ include = [
     { path = 'tests'},
 ]
 
+[tool.poetry.scripts]
+produce-table = "scripts.produce_table:main"
+
 [tool.poetry.dependencies]
 python = "^3.7"
 

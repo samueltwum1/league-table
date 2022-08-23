@@ -77,7 +77,6 @@ def rank_league_table(league_table: dict) -> Dict:
     def _rank_point_based_ranking(initial_ranking):
         # sort ties in alphabetical order of team name
         def sort_team_order(ranking):
-            print(ranking)
             for idx, rank in enumerate(ranking):
                 tmp = rank[1]
                 if idx == len(ranking) - 1:
