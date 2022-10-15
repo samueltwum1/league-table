@@ -1,0 +1,16 @@
+<!doctype html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+<table class="centered thick-border">
+	<tr>
+		<th>Team name</th>
+		<th>Points</th>
+	</tr>
+	{% for team, pts in ltable.items() %}
+		<tr>
+			<td>{{team}}</td>
+			<td>{{ pts }}</td>
+		</tr>		
+	{% endfor %}
+</table>
