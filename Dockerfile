@@ -1,7 +1,6 @@
-FROM python:latest
+FROM python:3.9
 
 # install poetry
-USER root
 RUN pip3 install poetry
 
 COPY . ./home
