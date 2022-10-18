@@ -1,5 +1,6 @@
 """
-Verify that group table standings update with live score
+This bdd test is only for illustration on the live flask app
+See `test_group_table_reflect_match_result`
 """
 
 import json
